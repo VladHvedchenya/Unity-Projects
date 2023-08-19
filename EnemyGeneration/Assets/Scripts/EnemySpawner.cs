@@ -5,6 +5,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private SpawnPoint[] _points;
     [SerializeField] private Enemy _prefab;
+    [SerializeField] private Vector3 _enemyDirection;
     
     private void Start()
     {
@@ -18,7 +19,8 @@ public class EnemySpawner : MonoBehaviour
         while (enabled)
         {
             int randomIndex = Random.Range(0, _points.Length);
-            Instantiate(_prefab, new Vector3(_points[randomIndex].transform.position.x, _points[randomIndex].transform.position.y, _points[randomIndex].transform.position.z), Quaternion.identity);
+            var enemy = Instantiate(_prefab, _points[randomIndex].transform.position, Quaternion.identity);
+            enemy.SetDirection(_enemyDirection);
             yield return wait;
         }
     }

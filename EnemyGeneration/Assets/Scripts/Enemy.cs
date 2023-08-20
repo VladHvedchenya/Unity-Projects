@@ -7,10 +7,14 @@ public class Enemy : MonoBehaviour
 
     private Vector3 _direction;
     private EnemyMover _mover;
-
-    private void Update()
+    
+    private void Start()
     {
         _mover = GetComponent<EnemyMover>();
+    }
+    
+    private void Update()
+    {  
         _mover.Move(_direction, _speed);
     }
 

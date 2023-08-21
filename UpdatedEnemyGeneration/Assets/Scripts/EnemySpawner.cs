@@ -10,10 +10,10 @@ public class EnemySpawner : MonoBehaviour
     
     private void Start()
     {
-        StartCoroutine(Spawn());
+        StartCoroutine(Spawning());
     }
 
-    private IEnumerator Spawn()
+    private IEnumerator Spawning()
     {
         var wait = new WaitForSeconds(_delay);
 

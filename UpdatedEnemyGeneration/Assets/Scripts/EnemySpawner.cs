@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private SpawnPoint[] _points;
     [SerializeField] private Enemy[] _enemyPrefabs;
     [SerializeField] private EnemyTarget[] _targets;
+    [SerializeField] private float _delay;
     
     private void Start()
     {
@@ -14,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        var wait = new WaitForSeconds(2f);
+        var wait = new WaitForSeconds(_delay);
 
         while (enabled)
         {

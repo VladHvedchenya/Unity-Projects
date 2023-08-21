@@ -4,6 +4,6 @@ public class EnemyMover : MonoBehaviour
 {
     public void Move(EnemyTarget target, float speed)
     {
-        transform.Translate((target.transform.position - transform.position) * speed * Time.deltaTime, target.transform);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 }

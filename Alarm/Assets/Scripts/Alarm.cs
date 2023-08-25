@@ -46,5 +46,8 @@ public class Alarm : MonoBehaviour
 
             yield return wait;
         }
+
+        if (_audio.volume == _minValue)
+            _audio.Stop();
     }
 }

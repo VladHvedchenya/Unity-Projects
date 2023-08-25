@@ -4,22 +4,20 @@ public class Thief : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    private float _value;
-
     private void Update()
     {
-        _value = _speed * Time.deltaTime;
+        float value = _speed * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.A))
-            transform.Translate(_value, 0, 0);
+            transform.Translate(value, 0, 0);
 
         if (Input.GetKey(KeyCode.D))
-            transform.Translate(-_value, 0, 0);
+            transform.Translate(-value, 0, 0);
 
         if (Input.GetKey(KeyCode.W))
-            transform.Translate(0, 0, -_value);
+            transform.Translate(0, 0, -value);
 
         if (Input.GetKey(KeyCode.S))
-            transform.Translate(0, 0, _value);
+            transform.Translate(0, 0, value);
     }
 }
